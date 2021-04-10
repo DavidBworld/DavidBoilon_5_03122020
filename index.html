@@ -22,58 +22,83 @@
 
   <link rel="stylesheet" href="css/style.css">
 </head>
-  <body class="container">
-    <div class="container mx-auto px-4 py-8">
+  <body>
+    <div class="bg-primary">
       <!-- HEADER -->
-      <header class="flex justify-between items-center rounded-lg w-full bg-oniPink py-2 px-6">
-        <a href="/"><img class="h-20 bg-oniPink" src="./images/logo.png" alt="Orinico"></a>
-        <nav class="flex">
-          <ul class="list-none font-semibold">
-            <li>
-              <a class="px-4 py-4" href="./cart.html">Panier</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <div class="container-fluid">
+        <div class="row">
+          <nav class="col navbar navbar-expand-lg-9">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/logo.png" width="200" height="100" alt="Site logo">
+            </a>
+            <a class="nav-link" href="">Panier</a>
+          </nav>
+        </div>
+      </div>
+    
       <!-- HEADER -->
-  
+      <div class="row mb-3">
+        <div class="col">
+           <input class="form-control" id="searchInput" type="text" placeholder="Search..">
+        </div>
+      </div>
+      <div class="card text-center mx-4 mb-3">
+        <div class="card-header text-uppercase fs-1 fw-bold ">
+          spécial fête aux Doudous
+        </div>
+        <div class="card-body">
+          <h1 class="card-title">Vive les promos chez ORINOCO</h1>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, vitae.</p>
+          <a href="#card" class="btn btn-primary">Découvrez nos promos</a>
+        </div>
+        <div class="card-footer text-muted">
+          Plus que 2 jours !
+        </div>
+      </div>
       <!-- PRODUCT CONTAINER & LOADING BOXES -->
-      <ul id="productsList" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-4">
-        <div class="bg-oniPink animate-pulse h-80"></div>
-        <div class="bg-oniPink animate-pulse h-80"></div>
-        <div class="bg-oniPink animate-pulse h-80"></div>
-        <div class="bg-oniPink animate-pulse h-80"></div>
-        <div class="bg-oniPink animate-pulse h-80"></div>
-        <div class="bg-oniPink animate-pulse h-80"></div>
-      </ul>
+      <div id="productsList" class="port tab desk">
+
+      </div>
       <!-- PRODUCT CONTAINER & LOADING BOXES -->
     </div>
-  
     <!-- PRODUCT TEMPLATE -->
-    <template id="product">
-      <li class="list-none bg-oniPink rounded-md p-4 transition duration-200 transform hover:scale-102">
-        <a id="productLink" href="">
-          <figure>
-            <img id="productImage" class="rounded h-64 w-full object-cover" src="" alt="">
-            <figcaption class="pt-4">
-              <div class="flex items-center mb-2">
-                <h2 id="productName" class="font-bold "></h2>
-                <div class="flex-grow"></div>
-                <div class="flex items-center mr-4">
-                  <img class="h-5" src="./images/star.svg" alt="">
-                  <img class="h-5" src="./images/star.svg" alt="">
-                  <img class="h-5" src="./images/star.svg" alt="">
-                  <img class="h-5" src="./images/star.svg" alt="">
-                  <img class="h-5" src="./images/star.svg" alt="">
-                </div>
-                <span id="productPrice" class="text-sm font-bold bg-white px-2 py-1 rounded"></span>
+    <template id="product" class="">
+        <a id="productLink" class="row mx-4" href="">
+          <div id= "card" class="card mb-3">
+            <img id="productImage" class="card-img-top p-2" src="" alt="" width="300" height="300" >
+            <div class="card-body">
+                <h2 id="productName" class="card-title card"></h2>
+                <button  id="productPrice" type="button" class="btn btn-primary">Primary</button>
+              <p id="productDescription" class="card-text"></p>
+              <div class="flex items-center mr-4">
+                <img class="h-5" src="images/Star.svg" alt="" width="30" height="30">
+                <img class="h-5" src="images/Star.svg" alt="" width="30" height="30">
+                <img class="h-5" src="images/Star.svg" alt="" width="30" height="30">
+                <img class="h-5" src="images/Star.svg" alt="" width="30" height="30">
+                <img class="h-5" src="images/Star.svg" alt="" width="30" height="30">
               </div>
-              <p id="productDescription" class="text-black text-opacity-80 text-sm text-justify"></p>
-            </figcaption>
-          </figure>
+            </div>
+          </div>
         </a>
-      </li>
+
     </template>
+    <!-- FOOTER -->
+    <div class="bg-dark" >
+      <div class="container-primary">
+        <div class="row">
+          <div class="col">
+              <ul class="list-inline text-center">
+                  <li class="list-inline-item"><a href="#">À propos</a></li>
+                  <li class="list-inline-item">&middot;</li>
+                  <li class="list-inline-item"><a href="#">Vie privée</a></li>
+                  <li class="list-inline-item">&middot;</li>
+                  <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER -->
   <script src="js/index.js" defer></script>
 </body>
 </html>

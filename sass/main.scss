@@ -1,2 +1,48 @@
-@import "_variable_overrides.scss"; 
-@import "../node_modules/bootstrap/scss/bootstrap.scss"
+@import "_variable_overrides.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.hostingstarIcon{
+    font-size: 1rem;
+    color: black;
+}
+.object-cover{
+    object-fit: cover
+}
+.w-full{
+    width: 100%;
+}
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.list-none {
+    list-style-type: none;
+}
+.navbar{
+    padding: 0 1rem 0 1rem!important;
+}
+.list-none{
+    border: 1px solid rgb(56, 8, 46);
+}
+.nav-link{
+    color:  rgb(56, 8, 46)!important;
+}
+.card-text{
+    color:rgb(56, 8, 46)!important;
+}
+.fw-bold{
+    font-weight: 900;
+}
+.port {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 768px){
+.tab {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+@media (min-width: 1280px){
+.desk {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+}

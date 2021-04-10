@@ -1,6 +1,12 @@
+/* fetch de l'api pour test
+fetch('http://localhost:3000/api/teddies')
+  .then(response => response.json())
+  .then(json => console.log(json))
+*/
 // fonction principale, auto appel (async)
 (async () => {
   const products = await getProducts()
+  console.log(products)
   hydratePage(products)
 })()
 
@@ -10,7 +16,7 @@ async function getProducts() {
     .then((products) => (products))
     .catch((error) => {
       alert(
-        "La connexion au serveur n'a pas pu être effectué. Cela est certainement lié à l'endormissement du serveur Heroku, veuillez attendre quelques secondes le temps qu'il sorte de son lit puis réesayez"
+        "La connexion au serveur a échoué. Veuillez réessayer !"
       )
     })
 }
@@ -18,18 +24,30 @@ async function getProducts() {
 function hydratePage(products) {
   // création de la fonction du hydratePage
   document.getElementById('productsList').innerHTML = ''
-
-  // boucle pour afficher tous les produits
+  console.log(document)
+  // "méthode"boucle du tableau products suivi de la fonction "lien:https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array"
+  // Méthode pour itérer sur un tableau en ayant accès à l'indice du tableau
+  // displayProduct est la fonction appelé dans la boucle par une fonction de callback
   products.forEach((product) => {
     displayProduct(product)
   })
 }
 function displayProduct(product) {
   // Get template
+  console.log(product);
   const templateElt = document.getElementById('product')
+  
+  console.log(templateElt)
 
-  // Clone template
+/* var node = document.importNode(externalNode, deep);
+Clone template Le nouveau Node ou DocumentFragment à importer dans le document courant. 
+Après l'importation, le nouveau parentNode du noeud est null, car il n'a pas encore été 
+inséré dans l'arborescence du document.
+deep
+Une valeur booléenne qui indique s'il faut ou non importer la totalité de la sous-arborescence DOM provenant de externalNode. Si ce paramètre est true (vrai), alors externalNode et tous ses descendants sont copiés
+*/  
   const cloneElt = document.importNode(templateElt.content, true)
+  console.log(cloneElt)
 
   // Hydrate template
   cloneElt.getElementById('productImage').src = product.imageUrl
@@ -37,7 +55,7 @@ function displayProduct(product) {
   cloneElt.getElementById('productPrice').textContent = `${product.price / 100}.00 €`
   cloneElt.getElementById('productDescription').textContent = product.description
   cloneElt.getElementById('productLink').href = `/products.html?id=${product._id}`
-
+  
   // Display template
   document.getElementById('productsList').appendChild(cloneElt)
 }
