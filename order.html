@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order - Orinoco</title>
+  <link rel="shortcut icon" href="">  
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+    <body>
+        <div class="bg-primary">
+        <!-- HEADER -->
+            <div class="container-fluid ">
+                <div class="row">
+                    <nav class=" col navbar navbar-expand-lg-9 d-flex">
+                        <div class="navbar-brand mr-auto p-2"" href="index.html">
+                        <img src="images/logo.png" width="200" height="100" alt="Site logo">
+                        </div>
+                        <ul class="nav-ul d-flex p-2" id="navUl">
+                            <li class="nav-link nav-background" href=""><a href="./cart.html">Panier</a></li>
+                            <li class="nav-link nav-background" href=""><a href="">Mon compte</a></li>
+                        </ul>
+                        <div class="hamburger p-2" id="hamburger">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- HEADER -->
+        <main class=" card w-full bg-oniPink rounded-lg my-4 py-16 flex justify-center flex-col">
+        <p class="text-center text-4xl font-bold mb-4">Félicitation, votre commande à bien été prise en compte !</p>
+        <p class="text-center text-xl mb-4">Identifiant de votre commande : <span class="font-bold" id="commandId"></span></p>
+        <a class="bg-primary inline-block uppercase text-center mx-auto bg-indigo-600 py-2 px-4 font-semibold rounded text-white" href="./index.html">Retourner à l'accueil</a>
+        </main>
+        <script src="./js/pages/order.js" defer></script> 
+    </body>
+</html>
