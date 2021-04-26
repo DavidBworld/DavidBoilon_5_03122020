@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <!-- Primary Meta Tags -->
+  <title>Produit - Orinoco</title>
+  <meta name="title" content="Produit - Orinoco">
+  <meta name="description" content="Orinoco est un site e-commerce.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://davidbworld.github.io/DavidBoilon_5_03122020">
+  <meta property="og:title" content="Accueil - Orinoco">
+  <meta property="og:description" content="Orinoco est un site e-commerce.">
+  <meta property="og:image" content="">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://davidbworld.github.io/DavidBoilon_5_03122020">
+  <meta property="twitter:title" content="Accueil - Orinoco">
+  <meta property="twitter:description" content="Orinoco est un site e-commerce.">
+  <meta property="twitter:image" content="">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="">  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+    <body>
+        <div class="bg-primary">
+        <!-- HEADER -->
+            <div class="container-fluid ">
+                <div class="row">
+                <nav class=" col navbar navbar-expand-lg-9 d-flex">
+                    <div class="navbar-brand mr-auto p-2"" href="index.html">
+                    <img src="images/logo.png" width="200" height="100" alt="Site logo">
+                    </div>
+                    <ul class="nav-ul d-flex p-2" id="navUl">
+                        <li class="nav-link nav-background" href=""><a href="./index.html">Accueil</a></li>
+                        <li class="nav-link nav-background" href=""><a href="./cart.html">Panier</a></li>
+                        <li class="nav-link nav-background" href=""><a href="">Mon compte</a></li>
+                    </ul>
+                    <div class="hamburger p-2" id="hamburger">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </ul>
+                </nav>
+                </div>
+            </div>
+        </div>
+        <!-- PRODUCT -->
+        <div class="row p-2 bg-white border rounded">
+            <div class="col-md-3 mt-1"><img  id="productImage" class="myImg img-fluid img-responsive rounded product-image"  src="" alt="Votre nounours préféré !"></div>
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+              </div>
+            <div class="col-md-6 mt-1">
+                <h1>Adopter <span id="productName"></span></h1>
+                <div class="d-flex flex-row">          
+                    <img class="h-5 ratings mr-2" src="images/star.svg" alt="" width="30" height="30">
+                    <img class="h-5 ratings mr-2" src="images/star.svg" alt="" width="30" height="30">
+                    <img class="h-5 ratings mr-2" src="images/star.svg" alt="" width="30" height="30">
+                    <img class="h-5 ratings mr-2" src="images/star.svg" alt="" width="30" height="30">
+                    <img class="h-5 ratings mr-2" src="images/star.svg" alt="" width="30" height="30">    
+                    <div class="ratings mr-2"></div><span>310 avis - 15 produits en stock</span>
+                </div>
+                
+                <div class="mt-1 mb-1 spec-1 font-weight-bold"><span>Description</span><span class="dot"></span><span> du Nounours :</span></div>
+                <p id="productDescription" class="text-justify para mb-0"><br><br></p>
+                <h2 class=" text-justify para mb-4">Choisir la couleur de votre ourson : </h2>
+                <div id="productColors" class="color grid mt-4 w-full" >
+                    <template id="productColor">
+                    <div class=" test h-12 sm:h-20 cursor-pointer Regular flex-grow rounded-pill"></div>
+                    </template>
+                </div>
+                <div class="social">
+                    <a class="social-icon" data-tooltip="email@gmail.com" href="mailto:email@gmail.com">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a class="social-icon" data-tooltip="GitHub" href="https://github.com">
+                      <i class="fa fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a class="social-icon" data-tooltip="LinkedIn" href="https://www.linkedin.com">
+                      <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a class="social-icon" data-tooltip="Twitter" href="https://twitter.com">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a class="social-icon" data-tooltip="Facebook" href="https://www.facebook.com">
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a class="social-icon" data-tooltip="YouTube" href="https://www.youtube.com">
+                      <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </a>
+                    <a class="social-icon" data-tooltip="Instagram" href="https://instagram.com/Colorlib">
+                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                <div class="d-flex flex-row align-items-center">
+                    <h4 id="productPrice" class="mr-1"></h4><del>Livraison : 7.90 €</del>
+                </div>
+                <h6 class="text-success">Livraison gratuite, plus que <span id="timer"></span></h6>
+                <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Détails</button></div>
+                <div class="buttons d-flex flex-row">
+                    <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button id="addToCart" class=" push-basket btn btn-success cart-button btn-block"><span id="dot" class="dot">1</span>Ajouter au panier</button>
+                </div>
+                <img class="paycb"src="images/secure2.png" alt="paiement confiance">
+            </div>
+        </div>
+        <!-- PRODUCT -->
+        <!-- FOOTER -->
+        <div class=" footer bg-dark">
+            <div class="container-primary">
+            <div class="row">
+                <div class="col">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item"><a href="#">À propos</a></li>
+                        <li class="list-inline-item">&middot;</li>
+                        <li class="list-inline-item"><a href="#">Vie privée</a></li>
+                        <li class="list-inline-item">&middot;</li>
+                        <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+      <!-- FOOTER -->
+    <script src="js/pages/product.js" defer></script>
+    <scrip src="js/cart.util.js" defer></scrip>
+  </body>
+</html>
