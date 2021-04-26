@@ -3,7 +3,7 @@ fetch('http://localhost:3000/api/teddies')
   .then(response => response.json())
   .then(json => console.log(json))
 */
-// fonction principale, auto appel (async)
+// fonction principale, auto appel (async) avec le () à la fin
 (async () => {
   const products = await getProducts()
   console.log(products)
@@ -35,7 +35,7 @@ function hydratePage(products) {
 function displayProduct(product) {
   // Get template
   console.log(product);
-  const templateElt = document.getElementById('product')
+  const templateElt = document.querySelector('.product')
   
   console.log(templateElt)
 
@@ -54,9 +54,20 @@ Une valeur booléenne qui indique s'il faut ou non importer la totalité de la s
   cloneElt.getElementById('productName').textContent = product.name
   cloneElt.getElementById('productPrice').textContent = `${product.price / 100}.00 €`
   cloneElt.getElementById('productDescription').textContent = product.description
-  cloneElt.getElementById('productLink').href = `/products.html?id=${product._id}`
+  cloneElt.getElementById('productLink').href = `/frontend/products.html?id=${product._id}`
   
   // Display template
   document.getElementById('productsList').appendChild(cloneElt)
 }
+
+let date1 = new Date();
+
+let dateFrance = date1.toLocaleString('fr-FR',{
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+});
+
+document.getElementById('p1').innerHTML =  dateFrance;
 
