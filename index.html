@@ -19,7 +19,7 @@
   <meta property="twitter:title" content="Accueil - Orinoco">
   <meta property="twitter:description" content="Orinoco est un site e-commerce.">
   <meta property="twitter:image" content="">
-
+  <link rel="shortcut icon" href="">
   <link rel="stylesheet" href="css/style.css">
 </head>
   <body>
@@ -31,7 +31,7 @@
             <a class="navbar-brand" href="index.html">
               <img src="images/logo.png" width="200" height="100" alt="Site logo">
             </a>
-            <a class="nav-link" href="">Panier</a>
+            <a class="nav-link color-link" href="./cart.html">Panier</a>
           </nav>
         </div>
       </div>
@@ -42,7 +42,7 @@
            <input class="form-control" id="searchInput" type="text" placeholder="Search..">
         </div>
       </div>
-      <div class="card text-center mx-4 mb-3">
+      <div class="card text-center mx-4 mb-3 shadow-sm">
         <div class="card-header text-uppercase fs-1 fw-bold ">
           spécial fête aux Doudous
         </div>
@@ -53,6 +53,7 @@
         </div>
         <div class="card-footer text-muted">
           Plus que 2 jours !
+          <p id="p1"></p>
         </div>
       </div>
       <!-- PRODUCT CONTAINER & LOADING BOXES -->
@@ -62,15 +63,15 @@
       <!-- PRODUCT CONTAINER & LOADING BOXES -->
     </div>
     <!-- PRODUCT TEMPLATE -->
-    <template id="product" class="">
+    <template id="product" class="product">
         <a id="productLink" class="row mx-4" href="">
-          <div id= "card" class="card mb-3">
-            <img id="productImage" class="card-img-top p-2" src="" alt="" width="300" height="300" >
+          <div id= "card" class="card mb-3 shadow-sm">
+            <img id="productImage" class="card-img-top p-2 productImage" src="" alt="" width="300" height="300" >
             <div class="card-body">
-                <h2 id="productName" class="card-title card"></h2>
-                <button  id="productPrice" type="button" class="btn btn-primary">Primary</button>
-              <p id="productDescription" class="card-text"></p>
-              <div class="flex items-center mr-4">
+                <h2 id="productName" class="card-title card productName"></h2>
+                <button  id="productPrice" type="button" class="btn btn-primary productPrice">Primary</button>
+              <p id="productDescription" class="card-text productDescription"></p>
+              <div class="items-center mr-4">
                 <img class="h-5" src="images/Star.svg" alt="" width="30" height="30">
                 <img class="h-5" src="images/Star.svg" alt="" width="30" height="30">
                 <img class="h-5" src="images/Star.svg" alt="" width="30" height="30">
@@ -80,7 +81,6 @@
             </div>
           </div>
         </a>
-
     </template>
     <!-- FOOTER -->
     <div class="bg-dark" >
@@ -99,6 +99,6 @@
       </div>
     </div>
     <!-- FOOTER -->
-  <script src="js/index.js" defer></script>
+  <script src="js/pages/index.js" defer></script>
 </body>
 </html>
