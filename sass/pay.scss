@@ -1,0 +1,39 @@
+.color-submit{
+    background-color:  rgb(67, 56, 202)!important;
+}
+.color-card{
+    background-color: rgba(221, 208, 208, 0.575);
+}
+.color-tr{
+    background-color: rgba(221, 208, 208, 0.575);
+}
+.color-tbody{
+    background-color: rgba(221, 208, 208, 0.9);
+}
+.color-card{
+    background: rgba(243,233,241,1); 
+}
+.grid{
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap:1rem;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+.col-span-2{
+    grid-column: span 2 / span 2;
+    grid-column-start: span 2;
+    grid-column-end: span 2;
+}
+.color-confirm{
+    background-color: rgba(45, 103, 168);
+    font-weight: bold;
+}
+.test2{
+    width: 25%;
+}
+.test3{
+    width: auto;
+}
