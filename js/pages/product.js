@@ -41,7 +41,11 @@ function hydratePage(product) {
       // Get & clone template for one color
       const templateElt = document.getElementById('productColor')
       const cloneElt = document.importNode(templateElt.content, true)
-  
+      if (color === "Pale brown"){
+        color = '#987654'
+      }else if (color === "Dark brown"){
+        color = '#654321'
+      }
       // Hydrate color clone
       cloneElt.querySelector('div').style.backgroundColor = color
   
