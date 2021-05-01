@@ -32,7 +32,7 @@ function displayProduct(product) {
 
   // Add events
   cloneElt.getElementById('productQuantity').onchange = (e) => {
-    e.preventDefault()
+    e.preventDefault() //doesn't prevent the event from spreading
 
     Cart.updateProductQuantity(product._id, e.target.selectedIndex + 1)
 
@@ -59,13 +59,12 @@ hamburger.onclick = () => {
 buttonClearBASKET.addEventListener("click", () => {
     clearBasket();
     location.reload();
-});
-console.log(buttonClearBASKET); */
+}); */
 //send order
 function addEventListeners() {
   // Purchase button
   document.getElementById('confirmPurchase').onclick = (e) => {
-    e.preventDefault()
+    e.preventDefault() //won't reload the page if don't validate
     sendOrder()
   }
 
@@ -73,7 +72,7 @@ function addEventListeners() {
   watchValidity(document.getElementById('firstname'), (e) => e.target.value.length > 1)
   watchValidity(document.getElementById('lastname'), (e) => e.target.value.length > 1)
   watchValidity(document.getElementById('email'), (e) => {
-    const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     return emailRegex.test(e.target.value)
   })
   watchValidity(document.getElementById('adress'), (e) => e.target.value.length > 6)
@@ -85,7 +84,7 @@ function addEventListeners() {
 }
 
 function watchValidity(elt, condition) {
-  elt.oninput = (e) => {
+  elt.oninput = (e) => {  //oninput execute a JavaScript when a user writes something in an <input> field
     if (condition(e)) {
       validInputElt(e.target)
     } else {
@@ -124,8 +123,9 @@ function sendOrder() {
   const city = document.getElementById('city').value
   
   const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-  const zipcodeRegex = /[0-9]{5}(-[0-9]{4})?/
-
+  const zipcodeRegex = /[0-9]{5}(-[0-9]{4})?/     //+ quantifieur entre 1 et infinité  * entre 0 et infinté  -- ? entre 0 et 1
+    //{5,} entre 5 et l'infini {5,8} entre 5 et l'infini
+    //
   if (!(
     firstname.length > 1
     && lastname.length > 1
@@ -134,11 +134,11 @@ function sendOrder() {
     && zipcodeRegex.test(zipcode)
     && city.length > 1
   )) {
-    alert("Veuillez remplir les champs correctements avant de procéder au paiement")
+    alert("Veuillez remplir les champs correctements avant de confirmer la commande")
     return
   }
 
-  const products = Object.values(Cart.products).map((product) => {
+  const products = Object.values(Cart.products).map((product) => { //map crée un nouveau tableau
     return product._id
   })
 
@@ -162,7 +162,6 @@ function sendOrder() {
   fetch(`http://localhost:3000/api/teddies/order`, requestOptions)
     .then((response) => response.json())
     .then((json) => {
-      console.log(json)
       localStorage.removeItem('shoppingCart')
       window.location.href = `/frontend/order.html?orderId=${json.orderId}`
     })
