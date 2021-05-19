@@ -22,7 +22,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link rel="shortcut icon" href="">  
+  <link rel="shortcut icon" type="image/png" href="images/logo.png"> 
   <link rel="stylesheet" href="css/style.css">
 </head>
     <body>
@@ -31,30 +31,29 @@
             <div class="container-fluid ">
                 <div class="row">
                 <nav class=" col navbar navbar-expand-lg-9 d-flex">
-                    <div class="navbar-brand mr-auto p-2"" href="index.html">
+                    <div class="navbar-brand mr-auto p-2">
                     <img src="images/logo.png" width="200" height="100" alt="Site logo">
                     </div>
                     <ul class="nav-ul d-flex p-2" id="navUl">
-                        <li class="nav-link nav-background" href=""><a href="./index.html">Accueil</a></li>
-                        <li class="nav-link nav-background" href=""><a href="./cart.html">Panier</a></li>
-                        <li class="nav-link nav-background" href=""><a href="">Mon compte</a></li>
+                        <li class="nav-link nav-background"><a href="./index.html">Accueil</a></li>
+                        <li class="nav-link nav-background"><a href="./cart.html">Panier</a></li>
+                        <li class="nav-link nav-background"><a href="">Mon compte</a></li>
                     </ul>
                     <div class="hamburger p-2" id="hamburger">
                         <div class="bar1"></div>
                         <div class="bar2"></div>
                         <div class="bar3"></div>
                     </div>
-                </ul>
                 </nav>
                 </div>
             </div>
         </div>
         <!-- PRODUCT -->
         <div class="row p-2 bg-white border rounded">
-            <div class="col-md-3 mt-1"><img  id="productImage" class="myImg img-fluid img-responsive rounded product-image"  src="" alt="Votre nounours préféré !"></div>
+            <div class="col-md-3 mt-1"><img  id="productImage" class="myImg img-fluid img-responsive rounded product-image" src="" alt="Votre peluche préférée !"></div>
             <div id="myModal" class="modal">
                 <span class="close">&times;</span>
-                <img class="modal-content" id="img01">
+                <img class="modal-content" id="img01" src="" alt="">
                 <div id="caption"></div>
               </div>
             <div class="col-md-6 mt-1">
@@ -109,7 +108,7 @@
                 <div class="buttons d-flex flex-row">
                     <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button id="addToCart" class=" push-basket btn btn-success cart-button btn-block"><span id="dot" class="dot">1</span>Ajouter au panier</button>
                 </div>
-                <img class="paycb"src="images/secure2.png" alt="paiement confiance">
+                <img class="paycb" src="images/secure2.png" alt="paiement confiance">
             </div>
         </div>
         <!-- PRODUCT -->
@@ -131,6 +130,6 @@
         </div>
       <!-- FOOTER -->
     <script src="js/pages/product.js" defer></script>
-    <scrip src="js/cart.util.js" defer></scrip>
+    <script src="js/cart.util.js" defer></script>
   </body>
 </html>
