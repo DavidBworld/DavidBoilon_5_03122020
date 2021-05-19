@@ -1,19 +1,22 @@
 // Main function, auto executed at load time
 (async () => {
     const productId = getProductId()
-    console.log(productId);
     const productData = await getProductData(productId)
-    console.log(productData);
     hydratePage(productData)
 })()
 
+/* let url = new URL('http://127.0.0.1:5500/frontend/products.html?id=5be9c8541c9d440000665243');
+let params = new URLSearchParams(url.search.slice(1));
+
+params.has('id') === true; */
+
 function getProductId() {
-    return new URLSearchParams(window.location.search).get('id')
+    return new URLSearchParams(window.location.search).get('id')  
 }
+
 async function getProductData(productId) {
     return fetch(`http://localhost:3000/api/teddies/${productId}`)
     .catch((error) => {
-      console.log(error)
     })
     .then((httpBodyResponse) => httpBodyResponse.json())
     .then((productData) => productData)
@@ -105,7 +108,7 @@ class CartObject {
 }
   
 const Cart = new CartObject()
-console.log(Cart);
+
 
 function redirectToShoppingCart(productName) {
 window.location.href = `/frontend/cart.html?lastAddedProductName=${productName}`
@@ -132,14 +135,14 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 //event add to card
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function(event) { //L’évènement DOMContentLoaded est émis lorsque le document HTML initial a été complètement chargé et analysé
     const cartButtons = document.querySelectorAll('.cart-button');
     cartButtons.forEach(button => {
     button.addEventListener('click',cartClick);
     });
     function cartClick(){
     let button =this;
-    button.classList.add('clicked');
+    button.classList.add('clicked'); //propriété classList avec la méthode add
     }
 });
 //Hamburger
