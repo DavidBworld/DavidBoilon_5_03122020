@@ -6,7 +6,6 @@ fetch('http://localhost:3000/api/teddies')
 // fonction principale, auto appel (async) avec le () à la fin
 (async () => {
   const products = await getProducts()
-  console.log(products)
   hydratePage(products)
 })()
 
@@ -24,7 +23,7 @@ async function getProducts() {
 function hydratePage(products) {
   // création de la fonction du hydratePage
   document.getElementById('productsList').innerHTML = ''
-  console.log(document)
+  
   // "méthode"boucle du tableau products suivi de la fonction "lien:https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array"
   // Méthode pour itérer sur un tableau en ayant accès à l'indice du tableau
   // displayProduct est la fonction appelé dans la boucle par une fonction de callback
@@ -34,10 +33,8 @@ function hydratePage(products) {
 }
 function displayProduct(product) {
   // Get template
-  console.log(product);
-  const templateElt = document.querySelector('.product')
   
-  console.log(templateElt)
+  const templateElt = document.querySelector('.product')
 
 /* var node = document.importNode(externalNode, deep);
 Clone template Le nouveau Node ou DocumentFragment à importer dans le document courant. 
@@ -47,7 +44,7 @@ deep
 Une valeur booléenne qui indique s'il faut ou non importer la totalité de la sous-arborescence DOM provenant de externalNode. Si ce paramètre est true (vrai), alors externalNode et tous ses descendants sont copiés
 */  
   const cloneElt = document.importNode(templateElt.content, true)
-  console.log(cloneElt)
+  
 
   // Hydrate template
   cloneElt.getElementById('productImage').src = product.imageUrl
@@ -59,6 +56,7 @@ Une valeur booléenne qui indique s'il faut ou non importer la totalité de la s
   // Display template
   document.getElementById('productsList').appendChild(cloneElt)
 }
+
 
 let date1 = new Date();
 
