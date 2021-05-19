@@ -500,9 +500,9 @@ ol, ul, dl {
     opacity: 0
 }
 
-.cart-button {
+/* .cart-button {
     height: 48px
-}
+} */
 
 .cart-button:focus {
     box-shadow: none
@@ -510,7 +510,6 @@ ol, ul, dl {
 
 .cart {
     position: relative;
-    height: 48px !important;
     width: 50px;
     margin-right: 8px;
     display: flex;
