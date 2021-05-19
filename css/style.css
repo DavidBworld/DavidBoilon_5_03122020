@@ -10567,17 +10567,15 @@ ol, ul, dl {
   opacity: 0;
 }
 
-.cart-button {
-  height: 48px;
-}
-
+/* .cart-button {
+    height: 48px
+} */
 .cart-button:focus {
   box-shadow: none;
 }
 
 .cart {
   position: relative;
-  height: 48px !important;
   width: 50px;
   margin-right: 8px;
   display: flex;
@@ -10670,6 +10668,11 @@ ol, ul, dl {
 
 .test3 {
   width: auto;
+}
+
+.return {
+  color: black !important;
+  font-weight: 900;
 }
 
 /*# sourceMappingURL=style.css.map */
