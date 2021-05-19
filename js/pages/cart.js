@@ -9,7 +9,7 @@ function hydratePage(productsInShoppingCart) {
   document.getElementById('totalPrice').textContent = Cart.getTotalPrice() + '.00€'
 
   // Loop over all products and displays them
-  const productList = Object.values(productsInShoppingCart)
+  const productList = Object.values(productsInShoppingCart) //La méthode Object.values() renvoie un tableau contenant les valeurs des propriétés
   productList.forEach((product) => {
     displayProduct(product)
   })
@@ -50,10 +50,6 @@ function displayProduct(product) {
   // Display template
   document.getElementById('productsList').prepend(cloneElt)
 }
-hamburger.onclick = () => {
-    hamburger.classList.toggle("open");
-    navUl.classList.toggle("slide");
-}
 //clear the basket
 /* const buttonClearBASKET = document.getElementById("clearBasket");
 buttonClearBASKET.addEventListener("click", () => {
@@ -69,16 +65,16 @@ function addEventListeners() {
   }
 
   // Input validity
-  watchValidity(document.getElementById('firstname'), (e) => e.target.value.length > 1)
+  watchValidity(document.getElementById('firstname'), (e) => e.target.value.length > 1) //The target event property returns the item that raised the event.
   watchValidity(document.getElementById('lastname'), (e) => e.target.value.length > 1)
   watchValidity(document.getElementById('email'), (e) => {
-    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    const emailRegex = /^[a-zA-Z0-9]+(.[\w]+)*@[\w]+(.[\w]+)*(\.[a-z]{2,4})$/
     return emailRegex.test(e.target.value)
   })
   watchValidity(document.getElementById('adress'), (e) => e.target.value.length > 6)
   watchValidity(document.getElementById('zipcode'), (e) => {
     const zipcodeRegex = /[0-9]{5}(-[0-9]{4})?/
-    return zipcodeRegex.test(e.target.value)
+    return zipcodeRegex.test(e.target.value) //methode test return true or false
   })
   watchValidity(document.getElementById('city'), (e) => e.target.value.length > 1)
 }
@@ -122,9 +118,9 @@ function sendOrder() {
   const email = document.getElementById('email').value
   const city = document.getElementById('city').value
   
-  const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+  const emailRegex = /^[a-zA-Z0-9]+(.[\w]+)*@[\w]+(.[\w]+)*(\.[a-z]{2,4})$/ //ne pas utiliser / comme délimiteur pour le travail sur les url
   const zipcodeRegex = /[0-9]{5}(-[0-9]{4})?/     //+ quantifieur entre 1 et infinité  * entre 0 et infinté  -- ? entre 0 et 1
-    //{5,} entre 5 et l'infini {5,8} entre 5 et l'infini
+    //{5,} entre 5 et l'infini {5,8} entre 5 et 8
     //
   if (!(
     firstname.length > 1
@@ -154,9 +150,9 @@ function sendOrder() {
   }
 
   const requestOptions = {
-    method: 'POST',
-    body: JSON.stringify(order),
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    method: 'POST',  // Ajoute des données dans le coeur de la requête
+    body: JSON.stringify(order), //le contenu de la requête est dans le body converti en Json.stringify
+    headers: { 'Content-Type': 'application/json; charset=utf-8' }, // précise les données envoyés au serveur avec sa valeurapplication/json
   }
 
   fetch(`http://localhost:3000/api/teddies/order`, requestOptions)
@@ -169,4 +165,7 @@ function sendOrder() {
       alert(error)
     })
 }
-
+hamburger.onclick = () => {
+  hamburger.classList.toggle("open");
+  navUl.classList.toggle("slide");
+}
