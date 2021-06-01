@@ -5,12 +5,12 @@ fetch('http://localhost:3000/api/teddies')
 */
 // fonction principale, auto appel (async) avec le () à la fin
 (async () => {
-  const products = await getProducts()
+  const products = await getProducts() //await : attend que la promesse soit résolu dans une fonction asynchrone
   hydratePage(products)
 })()
 
 async function getProducts() {
-  return fetch("http://localhost:3000/api/teddies")
+  return fetch("http://localhost:3000/api/teddies") //return du fetch
     .then((httpBodyResponse) => httpBodyResponse.json())
     .then((products) => (products))
     .catch((error) => {
@@ -27,7 +27,7 @@ function hydratePage(products) {
   // "méthode"boucle du tableau products suivi de la fonction "lien:https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array"
   // Méthode pour itérer sur un tableau en ayant accès à l'indice du tableau
   // displayProduct est la fonction appelé dans la boucle par une fonction de callback
-  products.forEach((product) => {
+  products.forEach((product) => { //la methode forEach permet d’itérer sur les propriétés d’un tableau
     displayProduct(product)
   })
 }

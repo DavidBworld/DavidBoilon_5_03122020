@@ -18,7 +18,7 @@ async function getProductData(productId) {
     return fetch(`http://localhost:3000/api/teddies/${productId}`)
     .catch((error) => {
     })
-    .then((httpBodyResponse) => httpBodyResponse.json())
+    .then((httpBodyResponse) => httpBodyResponse.json()) //transforme en json
     .then((productData) => productData)
 }
   
@@ -32,7 +32,7 @@ function hydratePage(product) {
   
     // Add event listeners on button
     document.getElementById('addToCart').onclick = (event) => {
-      event.preventDefault()
+      event.preventDefault() //action par défaut ne doit pas être prise en compte comme elle le serait normalement. 
       Cart.addProduct(product)
       redirectToShoppingCart(product.name)
     }
@@ -56,14 +56,13 @@ function hydratePage(product) {
       colorsElt.appendChild(cloneElt)
     })
 }
-//fonction constructeur
 class CartObject {
     get products() {
       //La méthode getItem() de l'interface Storage renvoie la valeur associée à la clé passée en paramètre.
       return JSON.parse(localStorage.getItem('shoppingCart') || '{}')
     }
   
-    set products(products) {
+    set products(products) { //set permet de lier une propriété d'un objet à une fonction qui sera appelée à chaque tentative de modification de cette propriété.
       localStorage.setItem('shoppingCart', JSON.stringify(products))
     }
   
@@ -94,7 +93,6 @@ class CartObject {
     updateProductQuantity(productId, quantity) {
       const products = this.products
       products[productId].quantity = quantity
-      console.log(products)
       this.products = products
     }
   
