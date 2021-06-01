@@ -1,4 +1,4 @@
-# DavidBoilon_5_03122020
+# OpenClassrooms P5 - Site e-commerce Orinoco
 
 ![homepage](https://github.com/DavidBworld/DavidBoilon_5_03122020/blob/main/images/logo.png)
 
