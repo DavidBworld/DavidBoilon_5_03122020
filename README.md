@@ -41,15 +41,20 @@ https://github.com/OpenClassrooms-Student-Center/JWDP5.git
 npm install
 ```
 
-2 - créer un fichier dans votre dossier Orinoco nommé frontend et cloné le repository
+2 - Créer un fichier dans votre dossier Orinoco nommé frontend et cloné le repository
 https://github.com/DavidBworld/DavidBoilon_5_03122020.git
 
 Ensuite exécuter la commande node server dans votre terminal du dossier backend
 ```cmd
 node server
 ```
+Vous devriez voir le message suivant :
+```cmd
+Listening on port 3000 //Le serveur doit fonctionner localhostavec le port par défaut 3000
+Successfully connected to MongoDB Atlas!
+```
 
-Pour le développement, il est conseillé d'utiliser l'extension "Live Server" de Visual Studio Code ou LiveReload pour Sublime Text 3
+!! Pour le développement, il est conseillé d'utiliser l'extension "Live Server" de Visual Studio Code ou LiveReload pour Sublime Text 3 !!
 
 ## Documents
 
