@@ -119,16 +119,21 @@ function sendOrder() {
   const city = document.getElementById('city').value
   
   const emailRegex = /^[a-zA-Z0-9]+(.[\w]+)*@[\w]+(.[\w]+)*(\.[a-z]{2,4})$/ //ne pas utiliser / comme délimiteur pour le travail sur les url
-  const zipcodeRegex = /[0-9]{5}(-[0-9]{4})?/     //+ quantifieur entre 1 et infinité  * entre 0 et infinté  -- ? entre 0 et 1
+  const zipcodeRegex = /[0-9]{5}(-[0-9]{4})?/  
+  const firstnameRegex = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/
+  const lastnameRegex = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/
+  const adressRegex = /^[a-zA-Z0-9]{0,50}/
+  const cityRegex = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/
+  //+ quantifieur entre 1 et infinité  * entre 0 et infinté  -- ? entre 0 et 1
     //{5,} entre 5 et l'infini {5,8} entre 5 et 8
     //
   if (!(
-    firstname.length > 1
-    && lastname.length > 1
-    && emailRegex.test(email)
-    && adress.length > 6
+    firstnameRegex.test(firstname)
+    && lastnameRegex.test(lastname)
+    && emailRegex.test(email) //La méthode test() vérifie s'il y a une correspondance entre un texte et une expression rationnelle. Elle retourne true en cas de succès et false dans le cas contraire.
+    && adressRegex.test(adress)
     && zipcodeRegex.test(zipcode)
-    && city.length > 1
+    && cityRegex.test(city)
   )) {
     alert("Veuillez remplir les champs correctements avant de confirmer la commande")
     return
@@ -158,7 +163,7 @@ function sendOrder() {
   fetch(`http://localhost:3000/api/teddies/order`, requestOptions)
     .then((response) => response.json())
     .then((json) => {
-      localStorage.removeItem('shoppingCart')
+      localStorage.removeItem('shoppingCart') //La méthode removeItem() de l'interface Storage , lorsque vous lui passez une clé en argument, va supprimer la ressource avec le nom de clé correspondant du storage
       window.location.href = `/frontend/order.html?orderId=${json.orderId}`
     })
     .catch(() => {
