@@ -54,7 +54,7 @@ Listening on port 3000 //Le serveur doit fonctionner avec le port par défaut 30
 Successfully connected to MongoDB Atlas!
 ```
 
-!! Pour le développement, il est conseillé d'utiliser l'extension "Live Server" de Visual Studio Code ou LiveReload pour Sublime Text 3 !!
+!! Vous pouvez maintenant ouvrir index.html avec votre navigateur favori !!
 
 ## Documents
 
