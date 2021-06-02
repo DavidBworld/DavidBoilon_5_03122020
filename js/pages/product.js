@@ -109,7 +109,7 @@ const Cart = new CartObject()
 
 
 function redirectToShoppingCart(productName) {
-window.location.href = `/frontend/cart.html?lastAddedProductName=${productName}`
+window.location.href = `./cart.html?lastAddedProductName=${productName}`
 } 
 
 // Get the modal
