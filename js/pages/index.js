@@ -51,7 +51,7 @@ Une valeur booléenne qui indique s'il faut ou non importer la totalité de la s
   cloneElt.getElementById('productName').textContent = product.name
   cloneElt.getElementById('productPrice').textContent = `${product.price / 100}.00 €`
   cloneElt.getElementById('productDescription').textContent = product.description
-  cloneElt.getElementById('productLink').href = `/frontend/products.html?id=${product._id}`
+  cloneElt.getElementById('productLink').href = `./products.html?id=${product._id}`
   
   // Display template
   document.getElementById('productsList').appendChild(cloneElt)
