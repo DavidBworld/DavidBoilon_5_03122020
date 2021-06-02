@@ -50,7 +50,7 @@ node server
 ```
 Vous devriez voir le message suivant :
 ```cmd
-Listening on port 3000 //Le serveur doit fonctionner localhostavec le port par défaut 3000
+Listening on port 3000 //Le serveur doit fonctionner avec le port par défaut 3000
 Successfully connected to MongoDB Atlas!
 ```
 
