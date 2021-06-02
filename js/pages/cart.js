@@ -121,7 +121,7 @@ function sendOrder() {
   const emailRegex = /^[a-zA-Z0-9]+(.[\w]+)*@[\w]+(.[\w]+)*(\.[a-z]{2,4})$/ //ne pas utiliser / comme délimiteur pour le travail sur les url
   const zipcodeRegex = /[0-9]{5}(-[0-9]{4})?/  
   const firstnameRegex = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/
-  const lastnameRegex = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/
+  const lastnameRegex = /^[a-zA-ZéèîïÉÈÎÏ][a-zA-Zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/
   const adressRegex = /^[a-zA-Z0-9]{0,50}/
   const cityRegex = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/
   //+ quantifieur entre 1 et infinité  * entre 0 et infinté  -- ? entre 0 et 1
@@ -164,7 +164,7 @@ function sendOrder() {
     .then((response) => response.json())
     .then((json) => {
       localStorage.removeItem('shoppingCart') //La méthode removeItem() de l'interface Storage , lorsque vous lui passez une clé en argument, va supprimer la ressource avec le nom de clé correspondant du storage
-      window.location.href = `/frontend/order.html?orderId=${json.orderId}`
+      window.location.href = `./order.html?orderId=${json.orderId}`
     })
     .catch(() => {
       alert(error)
