@@ -41,10 +41,14 @@ https://github.com/OpenClassrooms-Student-Center/JWDP5.git
 npm install
 ```
 
-2 - Créer un fichier dans votre dossier Orinoco nommé frontend et cloné le repository
+2 - Dans un dossier nommé Orinoco cloner le repository ci-dessous et renommé le frontend  :
+Repository GitHub à cloner pour le frontend
 https://github.com/DavidBworld/DavidBoilon_5_03122020.git
 
 Ensuite exécuter la commande node server dans votre terminal du dossier backend
+```cmd
+cd backend
+```
 ```cmd
 node server
 ```
